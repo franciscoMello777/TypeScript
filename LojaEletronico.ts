@@ -1,15 +1,17 @@
 var leitor = require('readline-sync')
 
 class Produto {
-    nome: string
-    preco: number
-    marca: string
-    compraPreço : number
+    public nome: string
+    public preco: number
+    public marca: string
+    private compraPreço : number
+
     constructor(nome: string, preço:number, marca: string, compraPreço: number){
         this.nome = nome
         this.preco = preço
         this.marca = marca
         this.compraPreço = compraPreço
+
     }
 
     calcularLucro(): void{
@@ -17,10 +19,11 @@ class Produto {
         console.log('esse é seu lucro:', lucro)
     }
 
-    getProduto(): void{
+    public getProduto(): void{
         console.log(`Nome: ${this.nome} \nPreço: ${this.preco} \n marca:${this.marca}`)
     }
-    setProduto(): void{
+
+    public setProduto(): void{
     let nomeUp = leitor.question('Qual o nome do Produto? ')
     let precoUp = leitor.questionInt('Qual o preco do Produto? ')
     let marcaUp = leitor.question('Qual a marca do Produto? ')
@@ -32,15 +35,17 @@ class Produto {
 }
 
 class Venda {
-    produto:Produto
-    quantidade: number
-    valor: number
-    data: string
+public produto:Produto
+public quantidade: number
+public valor: number
+public data: string
+
     constructor(produto: Produto, quantidade: number, valor: number, data: string){
         this.produto = produto
         this.quantidade = quantidade
         this.valor = valor 
         this.data = data
+
     }
 
     valorTotal(): void{
@@ -57,10 +62,13 @@ class Venda {
         console.log(`Produto: ${this.produto} \nQuantidade: ${this.quantidade}`)
 
 }
-getVenda(): void{
+
+public getVenda(): void{
     console.log(`Produto: ${this.produto.nome} \n Quantidade: ${this.quantidade} \n Valor :${this.valor} \n Data: ${this.data}`)
+
 }
-setVenda(): void{
+
+public setVenda(): void{
     let produtoUp = leitor.question('Qual o Produto? ')
     let quantidadeUp = leitor.questionInt('Qual a quantidade do Produto? ')
     let valorUp = leitor.question('Qual o valor do Produto? ')

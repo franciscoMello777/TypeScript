@@ -1,0 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var guerreiro_1 = require("./guerreiro");
+var monstro_1 = require("./monstro");
+var nome = "xablau";
+var idade = 15;
+var meuGuerreiro = new guerreiro_1.Guerreiro("cidade", "arqueiro", 10);
+var meuMonstro = new monstro_1.Monstro("zumbi");
+meuMonstro.status();
+meuGuerreiro.ataca(meuMonstro);
+meuMonstro.status();
